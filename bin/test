@@ -1,3 +1,5 @@
 #!/bin/bash
 
-$HOME/.poetry/bin/poetry coverage run --source=. --rcfile ./pyproject.toml -m pytest
+source "$HOME/.poetry/env"
+
+poetry run coverage run --source=. --rcfile ./pyproject.toml -m pytest
