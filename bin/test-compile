@@ -2,7 +2,7 @@
 
 # Syntax sugar.
 BIN_DIR=$(cd "$(dirname "$0")" || return; pwd) # absolute path
-
+POETRY_EXE=$HOME/.poetry/bin/poetry
 # shellcheck source=bin/utils
 source "$BIN_DIR/utils"
 
@@ -12,5 +12,6 @@ export LANG=C.UTF-8
 
 DISABLE_COLLECTSTATIC=1 INSTALL_TEST=1 "$(dirname "${0:-}")/compile" "$1" "$2" "$3"
 
-poetry install
+bash $POETRY_EXE install
+
 
