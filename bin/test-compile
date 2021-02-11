@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+#
+bash ./compile
+
+coverage run --source=. --rcfile ./pyproject.toml -m pytest
